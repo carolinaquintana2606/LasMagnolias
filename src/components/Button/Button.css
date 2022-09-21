@@ -1,0 +1,14 @@
+.Button{
+    color: white;
+    background-color: #BFACE0;
+    border: none;
+    border-radius: 5rem;
+    padding: 1rem;
+   margin-left: 1rem;
+    margin-right: 1rem;
+    font-family: 'Rubik', sans-serif;
+}
+
+.Button:hover{
+    color: #645CAA;
+}
