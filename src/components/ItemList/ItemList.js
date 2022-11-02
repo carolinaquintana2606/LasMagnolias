@@ -1,21 +1,18 @@
-import ItemCount from "../ItemCount/ItemCount"
 import Item from "../Item/Item"
-import { Link } from "react-router-dom"
+import { memo } from 'react'
+
 
 const ItemList = ({products}) =>{
 
     return(
-        <div>
+        <>
             { products.map(product => 
-            <div>
-                
-                <Item {...product}/>
-                <ItemCount initial={1} stock={product.stock}/>
-            </div>)}
-        </div>
+                <>
+                    <Item {...product}/>  
+                </>)}
+        </>
     )
 
 }
 
-
-export default ItemList
+export default memo(ItemList)

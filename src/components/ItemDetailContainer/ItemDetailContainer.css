@@ -1,11 +1,5 @@
-.saludo{
-    font-family: 'Rubik', sans-serif;
-    color: #645CAA;
-    margin-top: 5rem;
-}
-
-.titleList{
-    color: #645CAA;
+.titleDetail{
+color: #645CAA;
   display: flex;
   flex-direction: column;
   align-items: center;

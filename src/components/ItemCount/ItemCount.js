@@ -1,33 +1,28 @@
 import { useState } from "react"
-import Button from "../Button/Button"
+import './ItemCount.css'
 
-const handleOnAdd = () => {
-    console.log("agregar al carrito")
-  }
 
-const ItemCount = ({initial, stock}) =>{
-    
-    const [count, setCount] = useState(initial)
+const ItemCount = ({onAdd, stock = 0, initial = 1}) =>{
+
+    const [cant, setCant] = useState(initial)
 
     const decrement = () => {
-        
-        if(count > initial) {
-            setCount(count - 1)
+        if(cant > 1) {
+            setCant(cant - 1)
         }
     }
 
     const increment = () => {
-        
-        if (count < stock)
-        setCount(count + 1)
+        if (cant < stock)
+        setCant(cant + 1)
     }
 
     return (
         <div className="d-flex justify-content-center mt-5">
-            <button onClick={decrement} className="btn btn-primary">-</button>
-            <h4>{count}</h4>
-            <button onClick={increment} className="btn btn-primary">+</button>
-            <button onClick={handleOnAdd} className="btn btn-primary">Agregar al Carrito</button>
+            <button onClick={decrement} className="btn mx-1 BtnCount">-</button>
+            <h4 className="Count">{cant}</h4>
+            <button onClick={increment} className="btn mx-1 BtnCount">+</button>
+            <button className="btn mx-1 BtnCount" onClick={() => onAdd(cant)}>Agregar al carrito</button>
         </div>
     )
 }

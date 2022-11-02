@@ -1,0 +1,33 @@
+.item {
+    border-color: #BFACE0;
+}
+
+.CardTitle{
+    color: #A084CA;
+}
+
+.CardText{
+    color: #BFACE0;
+}
+
+.CardLink{
+    background-color: #A084CA;
+    border-radius: 5rem;
+    color: white;
+    text-decoration: none;
+    list-style: none;
+}
+
+.CardLink:hover{
+    color: #645CAA;
+}
+
+.CardDetail{
+    background-color: #A084CA;
+    border-radius: 5rem;
+}
+
+.CardDetail:hover{
+    color: #645CAA;
+}
+

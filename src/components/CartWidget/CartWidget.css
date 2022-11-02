@@ -1,4 +1,17 @@
 .CartWidget{
     font-family: 'Rubik', sans-serif;
-    color: #A084CA;
+    color: white;
+    background-color: #BFACE0;
+    border-radius: 5rem;
+    
+}
+
+.linkCart{
+    text-decoration: none;
+    list-style: none;
+    color: white;
+}
+
+.linkCart:hover{
+    color: #645CAA;
 }

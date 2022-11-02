@@ -1,39 +1,40 @@
 
 import "./ItemListContainer.css"
 import { useState, useEffect } from "react";
-import { getProducts } from "../../asyncMock";
-import ItemCount from "../ItemCount/ItemCount";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
-import { getProductsCat } from "../../asyncMock";
+import { getProductsByCat } from "../../services/firebase/firestore";
+import { useAsync } from "../../hooks/useAsync";
+
 
 const ItemListContainer = ({saludo}) =>{
+    //const {catId} = useParams()
+    //const {data: products, error, cargando} = useAsync(() => getProductsByCat(catId), [catId])
+    
     const [products, setProducts] = useState([])
-
+    const [cargando, setCargando] = useState(true)
     const {catId} = useParams()
-    
-    useEffect(() => {
-        if (!catId){
-            getProducts().then(resp => {
-                setProducts(resp)
-            })
-        }else {
-            getProductsCat(catId).then(resp => {
-                setProducts(resp)
-            }) 
 
-        }
+    useEffect(() =>{
+        setCargando(true)
+        getProductsByCat(catId).then(products => {setProducts(products)
+        }).catch(error => {
+            console.log(error)
+        }).finally(() =>{
+            setCargando(false)
+        })
+    }, [catId])
+    
+   
+    if(cargando) {
+        return <h1 className="titleList">Cargando productos...</h1>
     }
-    , [catId])
 
-    
-    return(
-        <div>
-            <h1 className="animate__animated animate__backInLeft saludo">{saludo}</h1>
+    return( 
+        <div className="row container-fluid justify-content-around">
+            <h1 className="animate__animated animate__backInLeft saludo">{saludo} {catId || ''}</h1>
             <ItemList products={products}/>
         </div>
-        
-        
     )
 }
 

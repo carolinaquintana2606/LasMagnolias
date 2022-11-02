@@ -1,0 +1,45 @@
+.CardCheckout{
+    background-color: #A084CA;
+    color: white;
+    border-radius: 5rem;
+    
+}
+
+.CardTitle{
+    color: #645CAA; 
+}
+
+
+.CardText{
+    color: #BFACE0;
+}
+
+.CardSubTitle{
+    color: #A084CA;
+}
+
+.formCheckout{
+
+    border-color: #9e9cae;
+    border-style: solid;
+    border-width: 0.01rem;
+    border-radius: 1rem;
+}
+
+
+.titleCheckout{
+    color: #645CAA;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Rubik', sans-serif;
+}
+
+
+.BtnOrder{
+    background-color: #645CAA;
+    color: white;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+}

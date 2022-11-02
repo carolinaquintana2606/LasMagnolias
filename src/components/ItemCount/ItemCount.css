@@ -1,0 +1,13 @@
+.BtnCount{
+    background-color: #A084CA;
+    color: white;
+    
+}
+
+.BtnCount:hover{
+    color:#645CAA;
+}
+
+.Count{
+    color: #645CAA;
+}
